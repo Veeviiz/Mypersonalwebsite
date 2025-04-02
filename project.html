@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function showSlide(project, direction) {
+            const images = document.querySelectorAll(`.project-${project} img`);
+            let currentIndex = 0;
+            images.forEach((img, index) => {
+                if (!img.classList.contains('hidden')) {
+                    currentIndex = index;
+                }
+                img.classList.add('hidden');
+            });
+            let newIndex = (currentIndex + direction + images.length) % images.length;
+            images[newIndex].classList.remove('hidden');
+        }
+    </script>
+</head>
+
+<body class="bg-zinc-900 text-gray-900">
+    <header class="bg-zinc-900 text-black p-6">
+        <nav class="flex justify-between items-center max-w-4xl mx-auto">
+            <h1 class="text-2xl font-bold text-blue-700">nasriSalaeh();</h1>
+            <ul class="flex space-x-6 text-zinc-300">
+                <li><a href="index.html" class="nav-link hover:text-white">Home</a></li>
+                <li><a href="about.html" class="nav-link hover:text-white">About</a></li>
+                <li><a href="project.html" class="nav-link hover:text-white">Projects</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        // Get current page URL
+        const currentLocation = window.location.pathname.split("/").pop();
+
+        // Select all nav links
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        // Loop through links and add 'active' class if it matches the current page
+        navLinks.forEach(link => {
+            if (link.getAttribute("href") === currentLocation) {
+                link.classList.add("text-white", "font-bold", "border-b-2", "border-blue-700");
+            }
+        });
+    </script>
+    <div class="text-center p-6">
+        <h1 class="text-white font-bold text-2xl">
+            Past Project Experience
+        </h1>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto pt-6">
+        <!-- Card 1 -->
+        <div class="bg-zinc-800 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+            <div class="p-4 ">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzj-g2tCVry_m5tMn3kFB2JHrbu1J7AukXYtOa6rXFxmULELmLJg_Q3ukvA1WJCcB0kbs&usqp=CAU"
+                    alt="eBook" class="w-full h-48 object-cover rounded-lg">
+            </div>
+            <div class=" text-lg  text-center text-white">Personal Website</div>
+            <div class="ml-4 mb-4 mr-4 ">
+                <h3 class="text-white">My personal website is a platform I created to showcase my skills and projects,
+                    allowing me to present my work and expertise in a professional and engaging way.</h3>
+                <p class="text-blue-500 text-sm mt-16">HTML,Tailwind</p>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-zinc-800 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+            <div class="p-4 ">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzj-g2tCVry_m5tMn3kFB2JHrbu1J7AukXYtOa6rXFxmULELmLJg_Q3ukvA1WJCcB0kbs&usqp=CAU"
+                    alt="eBook" class="w-full h-48 object-cover rounded-lg">
+            </div>
+            <div class=" text-lg  text-center text-white">Found Me Things!</div>
+            <div class="ml-4 mb-4 mr-4 ">
+                <h3 class="text-white">
+                    It is a mobile application designed for storing and searching devices and items, providing an
+                    efficient way to organize and locate your belongings with ease.</h3>
+                <p class="text-blue-500 text-sm mt-16">Flutter,FastAPI</p>
+            </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="bg-zinc-800 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+            <div class="p-4 ">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzj-g2tCVry_m5tMn3kFB2JHrbu1J7AukXYtOa6rXFxmULELmLJg_Q3ukvA1WJCcB0kbs&usqp=CAU"
+                    alt="eBook" class="w-full h-48 object-cover rounded-lg">
+            </div>
+            <div class=" text-lg  text-center text-white">Attendance app</div>
+            <div class="ml-4 mb-4 mr-4 ">
+                <h3 class="text-white">This project is a cooperative education project developed for Southern Web &
+                    Service Co., Ltd. This application is designed to track employee check-in and check-out.</h3>
+                <p class="text-blue-500 text-sm mt-16">Flutter,PHP</p>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
